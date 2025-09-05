@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle de Intimações STF/STJ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Controle de Intimações STF/STJ</h1>
+    
+<div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+  <button id="logout-btn" class="btn-primary" style="width:auto; padding:8px 12px;">Sair</button>
+</div>
+
+    <div class="table-wrapper card">
+      <table class="process-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Data de Distribuição</th>
+            <th>Número do Processo</th>
+            <th>Matéria</th>
+            <th>Responsável</th>
+            <th>Núcleo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>21/08/2024</td>
+            <td>12345-67.2024.1.01.0000</td>
+            <td>Direito Administrativo</td>
+            <td>João da Silva</td>
+            <td>Repetitivo</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>20/08/2024</td>
+            <td>98765-43.2024.1.02.0000</td>
+            <td>Direito Tributário</td>
+            <td>Maria Oliveira</td>
+            <td>Especializado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="action-box card">
+      <h3>Caixa de Ação</h3>
+
+      <div class="select-group">
+        <label for="responsavel">Distribuir para o responsável:</label>
+        <select id="responsavel" name="responsavel">
+          <option value="Alexandre">Alexandre</option>
+          <option value="Lúcio">Lúcio</option>
+        </select>
+      </div>
+
+      <div class="select-group">
+        <label for="nucleo">Núcleo:</label>
+        <select id="nucleo" name="nucleo">
+          <option value="Repetitivo">Repetitivo</option>
+          <option value="Especializado">Especializado</option>
+        </select>
+      </div>
+
+      <button class="apply-button" type="button">Aplicar</button>
+    </div>
+  </div>
+
+  <button class="fab-button" id="open-modal-btn" aria-label="Adicionar Nova Intimação">
+    <span>+</span>
+  </button>
+
+  <div id="add-process-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content card">
+      <button class="close-button" title="Fechar" aria-label="Fechar">&times;</button>
+      <h2 id="modal-title">Adicionar Nova Intimação</h2>
+      <form id="add-process-form">
+        <div class="input-group">
+          <label for="data-distribuicao">Data de Distribuição</label>
+          <input type="date" id="data-distribuicao" name="data-distribuicao" required />
+        </div>
+        <div class="input-group">
+          <label for="numero-processo">Número do Processo</label>
+          <input type="text" id="numero-processo" name="numero-processo" required />
+        </div>
+        <div class="input-group">
+          <label for="materia">Matéria</label>
+          <input type="text" id="materia" name="materia" required />
+        </div>
+        <button type="submit" class="btn-primary">Salvar Intimação</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- script no final e com o nome correto -->
+  <script src="main.js"></script>
+</body>
+</html>
